@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Aurelia Jewels — Collections</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root{
+      --brand:#7a5b3a; --brand-2:#b89b6f; --dark:#1b1b1b; --muted:#6c757d; --bg:#faf7f2; --radius:1.25rem;
+    }
+    body{background:var(--bg); font-family:Inter,system-ui,sans-serif; color:var(--dark);}
+    .brand-gradient{background:linear-gradient(135deg,var(--brand),#c4a676);} 
+    .navbar{--bs-navbar-padding-y:.7rem;}
+    .navbar .nav-link{font-weight:500;}
+    .navbar .nav-link.active{color:var(--brand) !important;}
+    .section-title{font-family:"Playfair Display",serif; font-weight:700;}
+    .eyebrow{color:var(--brand); text-transform:uppercase; letter-spacing:.12em; font-size:.85rem; font-weight:600;}
+    .card.product{border:none; border-radius:var(--radius); overflow:hidden; transition:all .25s;}
+    .card.product:hover{transform:translateY(-4px); box-shadow:0 8px 28px rgba(0,0,0,.08);}
+    .price{color:var(--brand); font-weight:700;}
+    .footer{background:#111; color:#ddd;}
+    .footer a{color:#cdb891; text-decoration:none;}
+    /* MQ */
+    @media (max-width: 575.98px) {
+  .hero-caption h1 { font-size: 1.6rem; }
+  .hero-caption p { font-size: 0.95rem; }
+  .navbar-brand { font-size: 1.05rem; }
+  .card.product { margin-bottom: 1.25rem; }
+  .category-card { margin-bottom: 1rem; }
+  .btn-brand { padding: 0.5rem 1rem; font-size: 0.9rem; }
+}
+
+/* Small devices (landscape phones, 576px–767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .hero-caption h1 { font-size: 1.9rem; }
+  .hero-caption p { font-size: 1rem; }
+  .card.product { margin-bottom: 1.25rem; }
+  .category-card { margin-bottom: 1.25rem; }
+  .btn-brand { padding: 0.55rem 1.1rem; }
+}
+
+/* Medium devices (tablets, 768px–991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hero-caption h1 { font-size: 2.2rem; }
+  .hero-caption p { font-size: 1.05rem; }
+  .card.product { margin-bottom: 1.5rem; }
+  .category-card { margin-bottom: 1.5rem; }
+  .btn-brand { padding: 0.6rem 1.2rem; }
+}
+
+/* Large devices (desktops, 992px–1199.98px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .hero-caption h1 { font-size: 2.6rem; }
+  .hero-caption p { font-size: 1.1rem; }
+  .card.product { margin-bottom: 1.5rem; }
+  .category-card { margin-bottom: 1.5rem; }
+  .btn-brand { padding: 0.65rem 1.25rem; }
+}
+
+/* Extra large devices (large desktops, ≥1200px) */
+@media (min-width: 1200px) {
+  .hero-caption h1 { font-size: 3rem; }
+  .hero-caption p { font-size: 1.15rem; }
+  .card.product { margin-bottom: 1.75rem; }
+  .category-card { margin-bottom: 1.75rem; }
+  .btn-brand { padding: 0.7rem 1.3rem; }
+}
+
+/* Very small phones */
+@media (max-width: 400px) {
+  .btn-brand { font-size: 0.85rem; padding: 0.45rem 0.95rem; }
+  .hero-caption p { font-size: 0.9rem; }
+}
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Aurelia <span class="text-warning">Jewels</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+    <div id="nav" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="collections.html">Collections</a></li>
+        <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<header class="py-5 text-center bg-white shadow-sm mb-5" data-aos="fade-down">
+  <div class="container">
+    <h1 class="section-title">Our Collections</h1>
+    <p class="text-muted">Explore timeless designs in gold, diamonds, and vibrant gemstones.</p>
+  </div>
+</header>
+
+<!-- Gold Collection -->
+<section id="gold" class="container py-5">
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="eyebrow">Gold</div>
+      <h2 class="section-title">Gold Collection</h2>
+    </div>
+  </div>
+  <div class="row g-4">
+    <div class="col-sm-6 col-lg-3" data-aos="zoom-in">
+      <div class="card product">
+        <img src="assets/photos/Verdant Bracelet.jpg" class="card-img-top" alt="Gold bangles"/>
+        <div class="card-body">
+          <h5 class="card-title">Royal Bangles</h5>
+          <p class="text-muted">22k handcrafted set</p>
+          <div class="price">₹ 85,000</div>
+          <a href="cart.html" class="btn btn-sm btn-outline-danger">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card product">
+        <img src="assets/photos/Golden Necklace.jpg" class="card-img-top" alt="Gold necklace"/>
+        <div class="card-body">
+          <h5 class="card-title">Seraphine Necklace</h5>
+          <p class="text-muted">22k yellow gold filigree</p>
+          <div class="price">₹ 98,000</div>
+          <a href="cart.html" class="btn btn-sm btn-outline-danger">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card product">
+        <img src="assets/photos/Necklace.jpg" class="card-img-top" alt="Gold necklace"/>
+        <div class="card-body">
+          <h5 class="card-title">Necklace</h5>
+          <p class="text-muted">22k yellow gold filigree</p>
+          <div class="price">₹ 98,000</div>
+          <a href="cart.html" class="btn btn-sm btn-outline-danger">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card product">
+        <img src="assets/photos/Earrings.jpg" class="card-img-top" alt="Gold Earrings"/>
+        <div class="card-body">
+          <h5 class="card-title">Earrings</h5>
+          <p class="text-muted">22k yellow gold filigree</p>
+          <div class="price">₹ 98,000</div>
+          <a href="cart.html" class="btn btn-sm btn-outline-danger">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card product">
+        <img src="assets/photos/gold-ring.jpg" class="card-img-top" alt="Gold Ring"/>
+        <div class="card-body">
+          <h5 class="card-title">Gold Ring</h5>
+          <p class="text-muted">22k yellow gold filigree</p>
+          <div class="price">₹ 98,000</div>
+          <a href="cart.html" class="btn btn-sm btn-outline-danger">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card product">
+        <img src="assets/photos/Kasulaperu Haram.jpg" class="card-img-top" alt="Kasulaperu Haram"/>
+        <div class="card-body">
+          <h5 class="card-title">Kasulaperu Haram</h5>
+          <p class="text-muted">22k yellow gold filigree</p>
+          <div class="price">₹ 98,000</div>
+          <a href="cart.html" class="btn btn-sm btn-outline-danger">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card product">
+        <img src="assets/photos/Kolhapuri Saaj.jpg" class="card-img-top" alt="Gold necklace"/>
+        <div class="card-body">
+          <h5 class="card-title">Seraphine Necklace</h5>
+          <p class="text-muted">22k yellow gold filigree</p>
+          <div class="price">₹ 98,000</div>
+          <a href="cart.html" class="btn btn-sm btn-outline-danger">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card product">
+        <img src="assets/photos/Earrings 2.jpg" class="card-img-top" alt="Gold Earrings"/>
+        <div class="card-body">
+          <h5 class="card-title">Earrings</h5>
+          <p class="text-muted">22k yellow gold filigree</p>
+          <div class="price">₹ 98,000</div>
+          <a href="cart.html" class="btn btn-sm btn-outline-danger">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Diamond Collection -->
+<section id="diamond" class="container py-5">
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="eyebrow">Diamonds</div>
+      <h2 class="section-title">Diamond Collection</h2>
+    </div>
+  </div>
+  <div class="row g-4">
+    <div class="col-sm-6 col-lg-3" data-aos="zoom-in">
+      <div class="card product">
+        <img src="assets/photos/White Rose Diamond.jpg" class="card-img-top" alt="Diamond Necklace">
+        <div class="card-body">
+          <h5 class="card-title">Diamond Necklace</h5>
+          <p class="text-muted">Brilliant cut diamonds</p>
+          <div class="price">₹ 1,25,000</div>
+          <a href="cart.html" class="btn btn-sm btn-outline-danger">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card product">
+        <img src="assets/photos/Stellar Earrings.jpg" class="card-img-top" alt="Diamond earrings"/>
+        <div class="card-body">
+          <h5 class="card-title">Stellar Earrings</h5>
+          <p class="text-muted">Brilliant cut studs</p>
+          <div class="price">₹ 56,000</div>
+          <a href="cart.html" class="btn btn-sm btn-outline-danger">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+     <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card product">
+        <img src="assets/photos/Stellar Earrings 2.jpg" class="card-img-top" alt="Diamond earrings"/>
+        <div class="card-body">
+          <h5 class="card-title">Stellar Earrings</h5>
+          <p class="text-muted">Brilliant cut studs</p>
+          <div class="price">₹ 56,000</div>
+          <a href="cart.html" class="btn btn-sm btn-outline-danger">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+     <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card product">
+        <img src="assets/photos/Aurora Diamond Ring.jpg" class="card-img-top" alt="Diamond Ring"/>
+        <div class="card-body">
+          <h5 class="card-title">Aurora Diamond Ring</h5>
+          <p class="text-muted">Brilliant cut diamonds</p>
+          <div class="price">₹ 1,25,000</div>
+          <a href="cart.html" class="btn btn-sm btn-outline-danger">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+     <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card product">
+        <img src="assets/photos/Navy American Necklace.jpg" class="card-img-top" alt="Navy American Necklace"/>
+        <div class="card-body">
+          <h5 class="card-title">Navy American Necklace</h5>
+          <p class="text-muted">Brilliant cut diamonds</p>
+          <div class="price">₹ 56,000</div>
+          <a href="cart.html" class="btn btn-sm btn-outline-danger">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+     <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card product">
+        <img src="assets/photos/Ruby Floral Diamond Necklace.jpg" class="card-img-top" alt="Ruby Floral Diamond Necklace"/>
+        <div class="card-body">
+          <h5 class="card-title">Ruby Floral Diamond Necklace</h5>
+          <p class="text-muted">Brilliant cut diamonds</p>
+          <div class="price">₹ 56,000</div>
+          <a href="cart.html" class="btn btn-sm btn-outline-danger">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+     <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card product">
+        <img src="assets/photos/Red American Diamond.jpg" class="card-img-top" alt="Red American Diamond" style="height: 285px;">
+        <div class="card-body">
+          <h5 class="card-title">Red American Diamond</h5>
+          <p class="text-muted">Brilliant cut diamonds</p>
+          <div class="price">₹ 56,000</div>
+          <a href="cart.html" class="btn btn-sm btn-outline-danger">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+     <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card product">
+        <img src="assets/photos/Cushion Cut Paraiba.jpg" class="card-img-top" alt="Cushion Cut Paraiba" style="height: 285px;">
+        <div class="card-body">
+          <h5 class="card-title">Cushion Cut Paraiba</h5>
+          <p class="text-muted">Brilliant cut diamonds</p>
+          <div class="price">₹ 56,000</div>
+          <a href="cart.html" class="btn btn-sm btn-outline-danger">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gemstone Collection -->
+<section id="gemstone" class="container py-5">
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="eyebrow">Gemstones</div>
+      <h2 class="section-title">Gemstone Collection</h2>
+    </div>
+  </div>
+  <div class="row g-4">
+    <div class="col-sm-6 col-lg-3" data-aos="zoom-in">
+      <div class="card product">
+        <img src="assets/photos/Red Stones Necklaces.jpg" class="card-img-top" alt="Red Stones Necklaces"/>
+        <div class="card-body">
+          <h5 class="card-title">Red Stones Necklaces</h5>
+          <p class="text-muted">Red stones in gems</p>
+          <div class="price">₹ 72,500</div>
+          <a href="cart.html" class="btn btn-sm btn-outline-danger">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card product">
+        <img src="assets/photos/Crimson Studs.jpg" class="card-img-top" alt="Crimson Studs"/>
+        <div class="card-body">
+          <h5 class="card-title">Crimson Studs</h5>
+          <p class="text-muted">Ruby, 14k rose gold</p>
+          <div class="price">₹ 24,900</div>
+          <a href="cart.html" class="btn btn-sm btn-outline-danger">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+     <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card product">
+        <img src="assets/photos/Grace Gemstone.jpg" class="card-img-top" alt="Grace Gemstone"/>
+        <div class="card-body">
+          <h5 class="card-title">Grace Gemstone</h5>
+          <p class="text-muted">Emerald, 14k white gold</p>
+          <div class="price">₹ 32,500</div>
+          <a href="cart.html" class="btn btn-sm btn-outline-danger">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+     <div class="col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card product">
+        <img src="assets/photos/Classic Diamond.jpg" class="card-img-top" alt="Classic Diamond" style="height: 240px;">
+        <div class="card-body">
+          <h5 class="card-title">Classic Diamond</h5>
+          <p class="text-muted">Round cut diamond, 14k white gold</p>
+          <div class="price">₹ 45,000</div>
+          <a href="cart.html" class="btn btn-sm btn-outline-danger">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer pt-5 mt-5">
+  <div class="container pb-4">
+    <div class="row g-4">
+      <div class="col-md-6">
+        <h5 class="text-light">Aurelia Jewels</h5>
+        <p class="text-secondary">Timeless designs. Ethical sourcing. Lifetime care.</p>
+      </div>
+      <div class="col-md-3">
+        <h6 class="text-light">Quick Links</h6>
+        <ul class="list-unstyled small">
+          <li><a href="collections.html">Collections</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h6 class="text-light">Contact</h6>
+        <ul class="list-unstyled small mb-0">
+          <li>📍 12 MG Road, Bengaluru</li>
+          <li>📞 +91 98765 43210</li>
+          <li>✉️ hello@aureliajewels.in</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-top border-secondary mt-4 pt-3 text-center text-secondary small">© <span id="year"></span> Aurelia Jewels. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({duration:700, once:true});
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

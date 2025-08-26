@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aurelia Jewels — Timeless Elegance</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#7a5b3a; /* warm gold-brown */
+      --brand-2:#b89b6f; /* light gold */
+      --dark:#1b1b1b;
+      --muted:#6c757d;
+      --bg:#faf7f2;
+      --radius:1.25rem;
+    }
+    html,body{background:var(--bg); color:var(--dark); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+    .brand-gradient{background:linear-gradient(135deg,var(--brand),#c4a676);} 
+    .navbar{--bs-navbar-padding-y:.7rem;}
+    .navbar .nav-link{font-weight:500;}
+    .navbar .nav-link.active{color:var(--brand) !important;}
+    .btn-brand{background:var(--brand); color:#fff; border:none; border-radius:999px; padding:.65rem 1.25rem;}
+    .btn-brand:hover{background:#61482e; color:#fff;}
+    .hero-card{border:none; border-radius:var(--radius); overflow:hidden;}
+    .hero-overlay{position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.55));}
+    .hero-caption{position:absolute; left:2rem; right:2rem; bottom:2rem; color:#fff;}
+    .section-title{font-family:"Playfair Display",serif; font-weight:700; letter-spacing:.3px;}
+    .eyebrow{color:var(--brand); font-weight:600; letter-spacing:.12em; text-transform:uppercase; font-size:.85rem;}
+    .card.product{border:none; border-radius:var(--radius); overflow:hidden; transition:transform .25s ease, box-shadow .25s ease;}
+    .card.product:hover{transform:translateY(-4px); box-shadow:0 10px 30px rgba(0,0,0,.08);} 
+    .price{font-weight:700; color:var(--brand);}    
+    .testimonial{background:#fff; border-radius:var(--radius); padding:1.25rem; box-shadow:0 10px 25px rgba(0,0,0,.05);}  
+    .footer{background:#111; color:#ddd;}
+    .footer a{color:#cdb891; text-decoration:none;}
+    /* Media Queries */
+    @media (max-width: 575.98px) {
+  .hero-caption h1 { font-size: 1.6rem; }
+  .hero-caption p { font-size: 0.95rem; }
+  .navbar-brand { font-size: 1.05rem; }
+  .card.product { margin-bottom: 1.25rem; }
+  .testimonial { padding: 1rem; font-size: 0.9rem; }
+  .btn-brand { padding: 0.5rem 1rem; font-size: 0.9rem; }
+}
+
+/* Small devices (landscape phones, 576px–767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .hero-caption h1 { font-size: 1.9rem; }
+  .hero-caption p { font-size: 1rem; }
+  .card.product { margin-bottom: 1.25rem; }
+  .testimonial { padding: 1.1rem; font-size: 0.95rem; }
+}
+
+/* Medium devices (tablets, 768px–991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hero-caption h1 { font-size: 2.2rem; }
+  .hero-caption p { font-size: 1.05rem; }
+  .card.product { margin-bottom: 1.5rem; }
+  .testimonial { padding: 1.25rem; font-size: 1rem; }
+}
+
+/* Large devices (desktops, 992px–1199.98px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .hero-caption h1 { font-size: 2.6rem; }
+  .hero-caption p { font-size: 1.1rem; }
+  .card.product { margin-bottom: 1.5rem; }
+  .testimonial { padding: 1.5rem; font-size: 1.05rem; }
+}
+
+/* Extra large devices (large desktops, ≥1200px) */
+@media (min-width: 1200px) {
+  .hero-caption h1 { font-size: 3rem; }
+  .hero-caption p { font-size: 1.15rem; }
+  .card.product { margin-bottom: 1.75rem; }
+  .testimonial { padding: 1.75rem; font-size: 1.1rem; }
+}
+
+/* Very small phones */
+@media (max-width: 400px) {
+  .btn-brand { font-size: 0.85rem; padding: 0.45rem 0.95rem; }
+  .hero-caption p { font-size: 0.9rem; }
+}
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Aurelia <span class="text-warning">Jewels</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="collections.html">Collections</a></li>
+          <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+           <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+            <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Carousel -->
+  <section class="container my-4">
+    <div id="heroCarousel" class="carousel slide hero-card position-relative" data-bs-ride="carousel" data-aos="fade-up">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="assets/photos/slide 2.jpg" class="d-block w-100" alt="Gold necklaces on a velvet display"/>
+          <div class="hero-overlay"></div>
+          <div class="hero-caption">
+            <span class="eyebrow">New Arrival</span>
+            <h1 class="fw-bold">Luminous Gold Collection</h1>
+            <p>Handcrafted 22k designs that celebrate tradition with modern lines.</p>
+            <a href="collections.html#gold" class="btn btn-brand">Shop Gold</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="assets/photos/slide 1.png" class="d-block w-100" alt="Diamond ring close-up"/>
+          <div class="hero-overlay"></div>
+          <div class="hero-caption">
+            <span class="eyebrow">Iconic</span>
+            <h1 class="fw-bold">Brilliant Diamonds</h1>
+            <p>Responsibly sourced stones with GIA certification on select pieces.</p>
+            <a href="collections.html#diamond" class="btn btn-brand">Explore Diamonds</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="assets/photos/slide 3.png" class="d-block w-100" alt="Gemstone bracelets"/>
+          <div class="hero-overlay"></div>
+          <div class="hero-caption">
+            <span class="eyebrow">Vibrant</span>
+            <h1 class="fw-bold">Gemstone Stories</h1>
+            <p>Emerald, ruby, and sapphire—curated with love.</p>
+            <a href="collections.html#gemstone" class="btn btn-brand">Browse Gemstones</a>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Previous">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="container py-5">
+    <div class="row align-items-end mb-3" data-aos="fade-up">
+      <div class="col-md-8">
+        <div class="eyebrow">Featured</div>
+        <h2 class="section-title">This Week's Highlights</h2>
+      </div>
+      <div class="col-md-4 text-md-end"><a href="collections.html" class="btn btn-outline-dark rounded-pill">View All</a></div>
+    </div>
+    <div class="row g-4">
+      <!-- Product 1 -->
+      <div class="col-12 col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="50">
+        <a class="text-decoration-none" href="product.html?id=aurora-ring">
+          <div class="card product">
+            <img src="assets/photos/Aurora Diamond Ring.jpg" class="card-img-top" alt="Aurora diamond ring"/>
+            <div class="card-body">
+              <h5 class="card-title">Aurora Diamond Ring</h5>
+              <p class="card-text text-muted">18k white gold, round cut</p>
+              <div class="price">₹ 1,25,000</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- Product 2 -->
+      <div class="col-12 col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+        <a class="text-decoration-none" href="product.html?id=seraphine-necklace">
+          <div class="card product">
+            <img src="assets/photos/Seraphine Necklace.jpg" class="card-img-top" alt="Seraphine gold necklace"/>
+            <div class="card-body">
+              <h5 class="card-title">Seraphine Necklace</h5>
+              <p class="card-text text-muted">22k yellow gold filigree</p>
+              <div class="price">₹ 98,000</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- Product 3 -->
+      <div class="col-12 col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="150">
+        <a class="text-decoration-none" href="product.html?id=emerald-bracelet">
+          <div class="card product">
+            <img src="assets/photos/Verdant Bracelet.jpg" class="card-img-top" alt="Emerald bracelet"/>
+            <div class="card-body">
+              <h5 class="card-title">Verdant Bracelet</h5>
+              <p class="card-text text-muted">Emerald in 18k gold</p>
+              <div class="price">₹ 72,500</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- Product 4 -->
+      <div class="col-12 col-sm-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+        <a class="text-decoration-none" href="product.html?id=ruby-studs">
+          <div class="card product">
+            <img src="assets/photos/Crimson Studs.jpg" class="card-img-top" alt="Ruby stud earrings"/>
+            <div class="card-body">
+              <h5 class="card-title">Crimson Studs</h5>
+              <p class="card-text text-muted">Ruby, 14k rose gold</p>
+              <div class="price">₹ 24,900</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Carousel -->
+  <section class="container py-5" id="testimonials">
+    <div class="row mb-4" data-aos="fade-up">
+      <div class="col-12 text-center">
+        <div class="eyebrow">Loved by Customers</div>
+        <h2 class="section-title">Testimonials</h2>
+      </div>
+    </div>
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="testimonial">
+                <p class="mb-2">“The Aurora ring is stunning. The sparkle is unreal and the service was impeccable!”</p>
+                <div class="d-flex align-items-center gap-3">
+                  <img src="https://i.pravatar.cc/80?img=12" alt="Customer Jane" class="rounded-circle" width="48" height="48"/>
+                  <div>
+                    <strong>Jane D.</strong>
+                    <div class="text-muted small">Bengaluru</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="testimonial">
+                <p class="mb-2">“Beautiful craftsmanship. My custom necklace was delivered on time for our anniversary.”</p>
+                <div class="d-flex align-items-center gap-3">
+                  <img src="https://i.pravatar.cc/80?img=22" alt="Customer Rahul" class="rounded-circle" width="48" height="48"/>
+                  <div>
+                    <strong>Rahul K.</strong>
+                    <div class="text-muted small">Chennai</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="testimonial">
+                <p class="mb-2">“Lovely store experience and authentic gemstones. Highly recommended.”</p>
+                <div class="d-flex align-items-center gap-3">
+                  <img src="https://i.pravatar.cc/80?img=5" alt="Customer Aisha" class="rounded-circle" width="48" height="48"/>
+                  <div>
+                    <strong>Aisha M.</strong>
+                    <div class="text-muted small">Mumbai</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev" aria-label="Previous">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next" aria-label="Next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer pt-5 mt-5">
+    <div class="container pb-4">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <h5 class="text-light">Aurelia Jewels</h5>
+          <p class="text-secondary">Timeless designs. Ethical sourcing. Lifetime care.</p>
+        </div>
+        <div class="col-md-3">
+          <h6 class="text-light">Quick Links</h6>
+          <ul class="list-unstyled small">
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h6 class="text-light">Contact</h6>
+          <ul class="list-unstyled small mb-0">
+            <li>📍 12 MG Road, Bengaluru</li>
+            <li>📞 +91 98765 43210</li>
+            <li>✉️ hello@aureliajewels.in</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-top border-secondary mt-4 pt-3 text-center text-secondary small">© <span id="year"></span> Aurelia Jewels. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration:700, once:true });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
+

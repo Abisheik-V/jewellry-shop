@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aurelia Jewels — About Us</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand:#7a5b3a;
+      --brand-2:#b89b6f;
+      --dark:#1b1b1b;
+      --bg:#faf7f2;
+      --radius:1.25rem;
+    }
+    body{background:var(--bg); color:var(--dark); font-family:Inter, sans-serif;}
+    .navbar{--bs-navbar-padding-y:.7rem;}
+    .navbar .nav-link{font-weight:500;}
+    .navbar .nav-link.active{color:var(--brand) !important;}
+    .section-title{font-family:"Playfair Display",serif; font-weight:700;}
+    .eyebrow{color:var(--brand); font-weight:600; text-transform:uppercase; font-size:.85rem; letter-spacing:.1em;}
+    .feature-card{background:#fff; border-radius:var(--radius); padding:1.5rem; box-shadow:0 6px 18px rgba(0,0,0,.06);}
+    .feature-card h5{color:var(--brand);}
+    .footer{background:#111; color:#ddd;}
+    .footer a{color:#cdb891; text-decoration:none;}
+    /* Extra small devices (phones, <576px) */
+@media (max-width: 575.98px) {
+  .hero-caption h1 { font-size: 1.6rem; }
+  .hero-caption p { font-size: 0.95rem; }
+  .navbar-brand { font-size: 1.05rem; }
+  .team-member img { width: 100%; border-radius: 0.8rem; }
+  .team-member h5 { font-size: 1rem; }
+  .team-member p { font-size: 0.85rem; }
+  .btn-brand { padding: 0.5rem 1rem; font-size: 0.9rem; }
+}
+
+/* Small devices (landscape phones, 576px–767.98px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .hero-caption h1 { font-size: 1.9rem; }
+  .hero-caption p { font-size: 1rem; }
+  .team-member img { width: 95%; border-radius: 1rem; }
+  .team-member h5 { font-size: 1.05rem; }
+  .team-member p { font-size: 0.9rem; }
+  .btn-brand { padding: 0.55rem 1.1rem; }
+}
+
+/* Medium devices (tablets, 768px–991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hero-caption h1 { font-size: 2.2rem; }
+  .hero-caption p { font-size: 1.05rem; }
+  .team-member img { width: 90%; border-radius: 1.1rem; }
+  .team-member h5 { font-size: 1.1rem; }
+  .team-member p { font-size: 0.95rem; }
+  .btn-brand { padding: 0.6rem 1.2rem; }
+}
+
+/* Large devices (desktops, 992px–1199.98px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .hero-caption h1 { font-size: 2.6rem; }
+  .hero-caption p { font-size: 1.1rem; }
+  .team-member img { width: 100%; border-radius: 1.25rem; }
+  .team-member h5 { font-size: 1.15rem; }
+  .team-member p { font-size: 1rem; }
+  .btn-brand { padding: 0.65rem 1.25rem; }
+}
+
+/* Extra large devices (large desktops, ≥1200px) */
+@media (min-width: 1200px) {
+  .hero-caption h1 { font-size: 3rem; }
+  .hero-caption p { font-size: 1.15rem; }
+  .team-member img { width: 100%; border-radius: 1.3rem; }
+  .team-member h5 { font-size: 1.2rem; }
+  .team-member p { font-size: 1.05rem; }
+  .btn-brand { padding: 0.7rem 1.3rem; }
+}
+
+/* Very small phones */
+@media (max-width: 400px) {
+  .btn-brand { font-size: 0.85rem; padding: 0.45rem 0.95rem; }
+  .hero-caption p { font-size: 0.9rem; }
+  .team-member h5 { font-size: 0.95rem; }
+  .team-member p { font-size: 0.8rem; }
+}
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Aurelia <span class="text-warning">Jewels</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="collections.html">Collections</a></li>
+          <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="text-center py-5" data-aos="fade-up">
+    <div class="eyebrow">Our Story</div>
+    <h1 class="section-title">Crafting Elegance Since 1995</h1>
+    <p class="text-muted col-md-8 mx-auto">Aurelia Jewels is where timeless artistry meets ethical craftsmanship. Every piece is a symbol of beauty, love, and heritage.</p>
+  </header>
+
+  <!-- About Story -->
+  <section class="container py-5">
+    <div class="row align-items-center g-5">
+      <div class="col-md-6" data-aos="fade-right">
+        <img src="https://images.unsplash.com/photo-1600185365483-26d7d28c7a2e?w=900&q=80" class="img-fluid rounded" alt="Jewellery making">
+      </div>
+      <div class="col-md-6" data-aos="fade-left">
+        <h2 class="section-title">The Aurelia Journey</h2>
+        <p>From a small family-owned workshop to an internationally recognized brand, Aurelia Jewels has grown with one guiding principle: unmatched quality and timeless beauty.</p>
+        <p>We ethically source each gemstone, design with precision, and craft with passion to bring you jewellery that lasts a lifetime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features / Values -->
+  <section class="container py-5">
+    <div class="text-center mb-5">
+      <div class="eyebrow">Our Values</div>
+      <h2 class="section-title">Why Choose Us</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="zoom-in">
+        <div class="feature-card h-100 text-center">
+          <h5>✨ Timeless Design</h5>
+          <p class="text-muted">Our collections balance classic elegance with modern trends.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="150">
+        <div class="feature-card h-100 text-center">
+          <h5>🌍 Ethical Sourcing</h5>
+          <p class="text-muted">We use conflict-free diamonds and responsibly mined gemstones.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="feature-card h-100 text-center">
+          <h5>💎 Lifetime Care</h5>
+          <p class="text-muted">Complimentary cleaning, resizing, and repair services for life.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer pt-5">
+    <div class="container pb-4">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <h5 class="text-light">Aurelia Jewels</h5>
+          <p class="text-secondary">Timeless designs. Ethical sourcing. Lifetime care.</p>
+        </div>
+        <div class="col-md-3">
+          <h6 class="text-light">Quick Links</h6>
+          <ul class="list-unstyled small">
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h6 class="text-light">Contact</h6>
+          <ul class="list-unstyled small mb-0">
+            <li>📍 12 MG Road, Bengaluru</li>
+            <li>📞 +91 98765 43210</li>
+            <li>✉️ hello@aureliajewels.in</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-top border-secondary mt-4 pt-3 text-center text-secondary small">
+        © <span id="year"></span> Aurelia Jewels. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration:700, once:true });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
