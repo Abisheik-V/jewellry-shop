@@ -20,74 +20,63 @@
       --bg:#faf7f2;
       --radius:1.25rem;
     }
-    body{background:var(--bg); color:var(--dark); font-family:Inter, sans-serif;}
+    body{background:var(--bg); color:var(--dark); font-family:Inter, sans-serif; overflow-x: hidden;}
     .navbar{--bs-navbar-padding-y:.7rem;}
     .navbar .nav-link{font-weight:500;}
     .navbar .nav-link.active{color:var(--brand) !important;}
+    .nav-link:hover{color:var(--brand-2);}
     .section-title{font-family:"Playfair Display",serif; font-weight:700;}
     .eyebrow{color:var(--brand); font-weight:600; text-transform:uppercase; font-size:.85rem; letter-spacing:.1em;}
     .feature-card{background:#fff; border-radius:var(--radius); padding:1.5rem; box-shadow:0 6px 18px rgba(0,0,0,.06);}
     .feature-card h5{color:var(--brand);}
     .footer{background:#111; color:#ddd;}
     .footer a{color:#cdb891; text-decoration:none;}
+    .footer a:hover{color:#fff;}
+
+    /* =============================
+       📱 Responsive Media Queries
+       ============================= */
+
     /* Extra small devices (phones, <576px) */
-@media (max-width: 575.98px) {
-  .hero-caption h1 { font-size: 1.6rem; }
-  .hero-caption p { font-size: 0.95rem; }
-  .navbar-brand { font-size: 1.05rem; }
-  .team-member img { width: 100%; border-radius: 0.8rem; }
-  .team-member h5 { font-size: 1rem; }
-  .team-member p { font-size: 0.85rem; }
-  .btn-brand { padding: 0.5rem 1rem; font-size: 0.9rem; }
-}
+    @media (max-width: 575.98px) {
+      header h1.section-title { font-size: 1.8rem; }
+      header p { font-size: 0.95rem; }
+      .feature-card { padding: 1rem; }
+      .navbar .nav-link { font-size: 0.9rem; }
+      footer .col-md-6, footer .col-md-3 { text-align: center; }
+    }
 
-/* Small devices (landscape phones, 576px–767.98px) */
-@media (min-width: 576px) and (max-width: 767.98px) {
-  .hero-caption h1 { font-size: 1.9rem; }
-  .hero-caption p { font-size: 1rem; }
-  .team-member img { width: 95%; border-radius: 1rem; }
-  .team-member h5 { font-size: 1.05rem; }
-  .team-member p { font-size: 0.9rem; }
-  .btn-brand { padding: 0.55rem 1.1rem; }
-}
+    /* Small devices (landscape phones, ≥576px and <768px) */
+    @media (min-width: 576px) and (max-width: 767.98px) {
+      header h1.section-title { font-size: 2rem; }
+      .feature-card { padding: 1.25rem; }
+      footer .row { text-align: center; }
+    }
 
-/* Medium devices (tablets, 768px–991.98px) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .hero-caption h1 { font-size: 2.2rem; }
-  .hero-caption p { font-size: 1.05rem; }
-  .team-member img { width: 90%; border-radius: 1.1rem; }
-  .team-member h5 { font-size: 1.1rem; }
-  .team-member p { font-size: 0.95rem; }
-  .btn-brand { padding: 0.6rem 1.2rem; }
-}
+    /* Medium devices (tablets, ≥768px and <992px) */
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      header h1.section-title { font-size: 2.3rem; }
+      .feature-card { margin-bottom: 1.5rem; }
+      .navbar .nav-link { font-size: 1rem; }
+    }
 
-/* Large devices (desktops, 992px–1199.98px) */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-  .hero-caption h1 { font-size: 2.6rem; }
-  .hero-caption p { font-size: 1.1rem; }
-  .team-member img { width: 100%; border-radius: 1.25rem; }
-  .team-member h5 { font-size: 1.15rem; }
-  .team-member p { font-size: 1rem; }
-  .btn-brand { padding: 0.65rem 1.25rem; }
-}
+    /* Large devices (desktops, ≥992px and <1200px) */
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+      header h1.section-title { font-size: 2.6rem; }
+      .feature-card { padding: 1.5rem; }
+    }
 
-/* Extra large devices (large desktops, ≥1200px) */
-@media (min-width: 1200px) {
-  .hero-caption h1 { font-size: 3rem; }
-  .hero-caption p { font-size: 1.15rem; }
-  .team-member img { width: 100%; border-radius: 1.3rem; }
-  .team-member h5 { font-size: 1.2rem; }
-  .team-member p { font-size: 1.05rem; }
-  .btn-brand { padding: 0.7rem 1.3rem; }
-}
+    /* Extra large devices (large desktops, ≥1200px and <1400px) */
+    @media (min-width: 1200px) and (max-width: 1399.98px) {
+      header h1.section-title { font-size: 3rem; }
+      .feature-card { padding: 1.75rem; }
+    }
 
-/* Very small phones */
-@media (max-width: 400px) {
-  .btn-brand { font-size: 0.85rem; padding: 0.45rem 0.95rem; }
-  .hero-caption p { font-size: 0.9rem; }
-  .team-member h5 { font-size: 0.95rem; }
-  .team-member p { font-size: 0.8rem; }
-}
+    /* Extra extra large devices (very large desktops, ≥1400px) */
+    @media (min-width: 1400px) {
+      header h1.section-title { font-size: 3.3rem; }
+      .feature-card { padding: 2rem; }
+    }
   </style>
 </head>
 <body>

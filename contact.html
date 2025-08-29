@@ -13,93 +13,94 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --brand:#7a5b3a;
-      --brand-2:#b89b6f;
-      --dark:#1b1b1b;
-      --bg:#faf7f2;
-      --radius:1.25rem;
-    }
-    body{background:var(--bg); color:var(--dark); font-family:Inter, sans-serif;}
-    .navbar{--bs-navbar-padding-y:.7rem;}
-    .navbar .nav-link{font-weight:500;}
-    .navbar .nav-link.active{color:var(--brand) !important;}
-    .section-title{font-family:"Playfair Display",serif; font-weight:700;}
-    .eyebrow{color:var(--brand); font-weight:600; text-transform:uppercase; font-size:.85rem; letter-spacing:.1em;}
-    .form-control:focus{border-color:var(--brand); box-shadow:0 0 0 .2rem rgba(122,91,58,.25);}
-    .footer{background:#111; color:#ddd;}
-    .footer a{color:#cdb891; text-decoration:none;}
-    /* Extra small devices (phones, <576px) */
+      :root{
+  --brand:#7a5b3a;
+  --brand-2:#b89b6f;
+  --dark:#1b1b1b;
+  --bg:#faf7f2;
+  --radius:1.25rem;
+}
+body{
+  background:var(--bg);
+  color:var(--dark);
+  font-family:Inter, sans-serif;
+  overflow-x: hidden; /* ✅ Prevent horizontal scroll */
+}
+.navbar{--bs-navbar-padding-y:.7rem;}
+.navbar .nav-link{font-weight:500;}
+.navbar .nav-link.active{color:var(--brand) !important;}
+.nav-link:hover{color:var(--brand-2);}
+.section-title{font-family:"Playfair Display",serif; font-weight:600;}
+.eyebrow{color:var(--brand); font-weight:600; text-transform:uppercase; font-size:.85rem; letter-spacing:.1em;}
+.form-control:focus{border-color:var(--brand); box-shadow:0 0 0 .2rem rgba(122,91,58,.25);}
+.footer{background:#111; color:#ddd;}
+.footer a{color:#cdb891; text-decoration:none;}
+.footer a:hover{color:#fff;}
+
+/* Ensure embedded map never causes overflow */
+.ratio iframe {
+  width: 100% !important;
+  max-width: 100% !important;
+  border: 0;
+  display: block;
+}
+
+/* =============================
+   📱 Responsive Media Queries
+   ============================= */
+
+/* Extra small devices (phones, <576px) */
 @media (max-width: 575.98px) {
-  .hero-caption h1 { font-size: 1.6rem; }
-  .hero-caption p { font-size: 0.95rem; }
-  .navbar-brand { font-size: 1.05rem; }
-  .contact-form input, 
-  .contact-form textarea, 
-  .contact-form button { font-size: 0.9rem; padding: 0.5rem; }
-  .contact-info { font-size: 0.85rem; }
-  .btn-brand { padding: 0.5rem 1rem; font-size: 0.9rem; }
-  iframe.map { height: 200px; }
+  header h1.section-title { font-size: 1.6rem; }
+  header p { font-size: 0.9rem; padding: 0 1rem; }
+
+  form, .bg-white.p-4 { padding: 1rem !important; }
+  .form-control { font-size: 0.9rem; }
+
+  .ratio iframe { height: 250px !important; }
+
+  .navbar .nav-link { font-size: 0.9rem; }
+  footer .col-md-6, footer .col-md-3 { text-align: center; }
 }
 
-/* Small devices (landscape phones, 576px–767.98px) */
+/* Small devices (≥576px and <768px) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .hero-caption h1 { font-size: 1.9rem; }
-  .hero-caption p { font-size: 1rem; }
-  .contact-form input, 
-  .contact-form textarea, 
-  .contact-form button { font-size: 0.95rem; padding: 0.55rem; }
-  .contact-info { font-size: 0.9rem; }
-  iframe.map { height: 250px; }
-  .btn-brand { padding: 0.55rem 1.1rem; }
+  header h1.section-title { font-size: 1.9rem; }
+  header p { font-size: 0.95rem; padding: 0 1.5rem; }
+
+  form, .bg-white.p-4 { padding: 1.25rem !important; }
+  .ratio iframe { height: 300px !important; }
+
+  footer .row { text-align: center; }
 }
 
-/* Medium devices (tablets, 768px–991.98px) */
+/* Medium devices (≥768px and <992px) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .hero-caption h1 { font-size: 2.2rem; }
-  .hero-caption p { font-size: 1.05rem; }
-  .contact-form input, 
-  .contact-form textarea, 
-  .contact-form button { font-size: 1rem; padding: 0.6rem; }
-  .contact-info { font-size: 0.95rem; }
-  iframe.map { height: 300px; }
-  .btn-brand { padding: 0.6rem 1.2rem; }
+  header h1.section-title { font-size: 2.2rem; }
+  form, .bg-white.p-4 { padding: 1.5rem !important; }
+  .ratio iframe { height: 350px !important; }
 }
 
-/* Large devices (desktops, 992px–1199.98px) */
+/* Large devices (≥992px and <1200px) */
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  .hero-caption h1 { font-size: 2.6rem; }
-  .hero-caption p { font-size: 1.1rem; }
-  .contact-form input, 
-  .contact-form textarea, 
-  .contact-form button { font-size: 1.05rem; padding: 0.65rem; }
-  .contact-info { font-size: 1rem; }
-  iframe.map { height: 350px; }
-  .btn-brand { padding: 0.65rem 1.25rem; }
+  header h1.section-title { font-size: 2.5rem; }
+  .ratio iframe { height: 400px !important; }
 }
 
-/* Extra large devices (large desktops, ≥1200px) */
-@media (min-width: 1200px) {
-  .hero-caption h1 { font-size: 3rem; }
-  .hero-caption p { font-size: 1.15rem; }
-  .contact-form input, 
-  .contact-form textarea, 
-  .contact-form button { font-size: 1.1rem; padding: 0.7rem; }
-  .contact-info { font-size: 1.05rem; }
-  iframe.map { height: 400px; }
-  .btn-brand { padding: 0.7rem 1.3rem; }
+/* Extra large devices (≥1200px and <1400px) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  header h1.section-title { font-size: 2.8rem; }
+  .ratio iframe { height: 420px !important; }
 }
 
-/* Very small phones */
-@media (max-width: 400px) {
-  .btn-brand { font-size: 0.85rem; padding: 0.45rem 0.95rem; }
-  .hero-caption p { font-size: 0.9rem; }
-  .contact-form input, 
-  .contact-form textarea, 
-  .contact-form button { font-size: 0.85rem; padding: 0.45rem; }
-  .contact-info { font-size: 0.8rem; }
-  iframe.map { height: 180px; }
+/* Extra extra large devices (≥1400px) */
+@media (min-width: 1400px) {
+  header h1.section-title { font-size: 3rem; }
+  .ratio iframe { height: 450px !important; }
 }
+
+
+
   </style>
 </head>
 <body>
